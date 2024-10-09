@@ -1,0 +1,79 @@
+
+.dashboard-container{
+  /* padding: 15px; */
+  margin-top: 90px;
+}
+
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sticker {
+    font-weight: bold;
+    font-size: large;
+    background-color: #007bff;  
+    color: white;
+  }
+
+  .qr-list {
+    margin: 20px;
+  }
+  
+  .vehicle-card {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .vehicle-card h3 {
+    margin-top: 0;
+  }
+  
+  /* .qr-code {
+    position: relative; 
+    width: 946px;
+    height: 469px; 
+    border-radius: 8px; 
+    background-image: url('../../../../assets/img/qrimg.svg'); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+} */
+
+.qr-code img {
+    width: 22%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+}
+
+.qr-code p {
+    width: 22%;
+    height: auto;
+    position: absolute;
+    top: 7%;
+    right: 64%;
+    transform: translate(-50%, -50%);
+}
+
+.qr-code {
+  position: relative;
+  width: 650px;
+  height: 325px;
+  border-radius: 8px;
+  background-image: url('../../../../assets/img/qrimg.svg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,8 @@
+{
+    "/api": {
+        "target": "https://apidev.carwhistler.com/uploads/qr_codes",
+        "secure": true,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

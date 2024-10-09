@@ -1,0 +1,102 @@
+<div class="call-list">
+    <div class="call-table shadow-lg rounded">
+      <div class="table-title-bg mt-4">
+        <h3 class="table-title cursor-pointer">
+          <i (click)="goBack()" class="fa fa-chevron-left" aria-hidden="true">&nbsp;</i>
+          Call Details
+        </h3>
+      </div>
+  
+      <div class="date-range-inputs text-center my-3">
+        <label for="startDate">Start Date:</label>
+        <input [(ngModel)]="startDate" id="startDate" type="date" class="form-control d-inline-block w-auto mx-2">
+  
+        <label for="endDate">End Date:</label>
+        <input [(ngModel)]="endDate" id="endDate" type="date" class="form-control d-inline-block w-auto mx-2">
+  
+        <button class="btn btn-primary mx-2" (click)="submitDates()">Submit</button>
+        <button class="btn btn-secondary mx-2" (click)="refreshData()">Refresh
+          <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
+        </button>
+      </div>
+  
+      <div class="table-responsive m-3" style="min-height: calc(-81.5px + 99.1vh);">
+        <div *ngIf="loading" class="text-center">Loading...</div>
+  
+        <div *ngIf="!loading && callData" class="row text-center">
+          
+          <!-- Card 1: Total Calls -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Total Calls: {{ callData.totalCalls || 0 }} </h5>
+                <div class="row">
+                  <div class="col-6">
+                    <p><strong>Answered:</strong> {{ callData.totalAnsweredCalls || 0 }}</p>
+                  </div>
+                  <div class="col-6">
+                    <p><strong>Failed:</strong> {{ callData.totalFailedCalls || 0 }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Card 2: Total Incoming Calls -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Total Incoming Calls: {{ callData.totalIncomingCalls || 0 }}</h5>
+                <div class="row">
+                  <div class="col-6">
+                    <p><strong>Answered:</strong> {{ callData.incomingSuccessCalls || 0 }}</p>
+                  </div>
+                  <div class="col-6">
+                    <p><strong>Failed:</strong> {{ callData.incomingFailedCalls || 0 }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Card 3: Total Outgoing Calls -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Total Outgoing Calls: {{ callData.totalOutgoingCalls|| 0 }}</h5>
+                <div class="row">
+                  <div class="col-6">
+                    <p><strong>Answered:</strong> {{ callData.outgoingSuccessCalls || 0 }}</p>
+                  </div>
+                  <div class="col-6">
+                    <p><strong>Failed:</strong> {{ callData.outgoingFailedCalls || 0 }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Card 4: Total Abandoned Calls -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">Total Abandoned Calls: {{ callData.totalAbandonedCalls || 0 }}</h5>
+                <div class="row">
+                  <div class="col-6">
+                    <p><strong>Incoming Abandoned:</strong> {{ callData.totalIncomingAbandonedCalls || 0 }}</p>
+                  </div>
+                  <div class="col-6">
+                    <p><strong>Outgoing Abandoned:</strong> {{ callData.totalOutgoingAbandonedCalls || 0 }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div *ngIf="!loading && !callData.totalCalls" class="text-center"></div>
+      </div>
+    </div>
+  </div>
+  
